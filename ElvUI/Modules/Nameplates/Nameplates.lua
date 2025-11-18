@@ -295,6 +295,14 @@ function NP:StylePlate(nameplate)
 	NP.Plates[nameplate] = nameplate:GetName()
 
 	hooksecurefunc(nameplate, 'UpdateAllElements', NP.PostUpdateAllElements)
+
+	if not nameplate.OriginalSetAlpha then
+		nameplate.OriginalSetAlpha = nameplate.SetAlpha
+		nameplate.SetAlpha = function(frame, alpha)
+			frame.OriginalSetAlpha(frame, 1)
+		end
+	end
+	nameplate:SetAlpha(1)
 end
 
 function NP:UpdatePlate(nameplate, updateBase)
