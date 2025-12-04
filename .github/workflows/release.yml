@@ -28,7 +28,7 @@ jobs:
           mkdir -p artifacts/${ADDON_NAME}
           rsync -a --exclude-from='.releaseinfo/ignore' --exclude='artifacts/' . artifacts/${ADDON_NAME}/
           cd artifacts/${PRIMARY_DIR}
-          zip -r "${GITHUB_WORKSPACE}/${ARCHIVE_NAME}" artifacts/${ADDON_NAME}
+          zip -r "${GITHUB_WORKSPACE}/${ARCHIVE_NAME}" ${ADDON_NAME}
 
       - name: Release
         uses: softprops/action-gh-release@v2
