@@ -3,10 +3,10 @@ name: Release
 on:
   push:
     tags:
-      - 'v\d+.\d+.\d+\-.+'
-      - 'v\d+.\d+.\d+'
-      - 'v\d+.\d+\-.+'
-      - 'v\d+.\d+'
+      - 'v*.*.*'
+      - 'v*.*.*-*'
+      - 'v*.*'
+      - 'v*.*-*'
 
 jobs:
   release:
