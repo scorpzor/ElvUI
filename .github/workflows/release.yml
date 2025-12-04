@@ -22,6 +22,7 @@ jobs:
 
           echo "ADDON_NAME=$ADDON_NAME" >> $GITHUB_ENV
           echo "ARCHIVE_NAME=$ARCHIVE_NAME" >> $GITHUB_ENV
+          echo "PRIMARY_DIR=$PRIMARY_DIR" >> $GITHUB_ENV
 
       - name: Package addons
         run: |
